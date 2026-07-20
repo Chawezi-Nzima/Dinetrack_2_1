@@ -1,0 +1,78 @@
+name: dinetrack_2_1
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.9.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Core dependencies
+  cupertino_icons: ^1.0.6
+
+  # QR Code & scanning
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^7.1.3
+
+  # Supabase & Database
+  supabase_flutter: ^2.10.3
+
+  # File handling
+  image_picker: ^1.0.4
+
+  # PDF & Printing
+  pdf: ^3.10.0
+  printing: ^5.11.0
+
+  # Environment
+  flutter_dotenv: ^6.0.0
+
+  # URL handling
+  url_launcher: ^6.2.0
+
+  # Payment Processing
+  paychangu_flutter: ^0.0.3
+  uuid: ^4.5.1
+
+  # Local storage / formatting
+  shared_preferences: ^2.2.2
+  intl: ^0.20.2
+
+  # Notifications & sharing
+  audioplayers: ^6.5.1
+  share_plus: ^7.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/logo.png"
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/logo.png"
+  android: true
+  ios: true
+  color_dark: "#000000"
+  image_dark: "assets/images/logo.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/env/.env.production
+    - assets/images/logo.png
+    - assets/images/dyn.jpg
+    - assets/images/delicious_food_spread.png
+    - assets/audio/waiter_call.mp3
