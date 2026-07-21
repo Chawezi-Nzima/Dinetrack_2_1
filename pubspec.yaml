@@ -1,5 +1,5 @@
 name: dinetrack_2_1
-description: "A new Flutter project."
+description: "DineTrack - Restaurant ordering & management platform for Malawi"
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -11,40 +11,77 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Core dependencies
+  # ==========================================================================
+  # CORE UI
+  # ==========================================================================
   cupertino_icons: ^1.0.6
 
-  # QR Code & scanning
+  # ==========================================================================
+  # STATE MANAGEMENT
+  # ==========================================================================
+  # (Add provider/getx if needed later)
+
+  # ==========================================================================
+  # SUPABASE & DATABASE
+  # ==========================================================================
+  supabase_flutter: ^2.10.3
+
+  # ==========================================================================
+  # QR CODE & SCANNING
+  # ==========================================================================
   qr_flutter: ^4.1.0
   mobile_scanner: ^7.1.3
 
-  # Supabase & Database
-  supabase_flutter: ^2.10.3
+  # ==========================================================================
+  # PAYMENTS
+  # ==========================================================================
+  # REMOVED: paychangu_flutter (using custom PayChanguService instead)
+  # ADDED: http for direct PayChangu REST API calls
+  http: ^1.2.0
+  uuid: ^4.5.1
 
-  # File handling
+  # ==========================================================================
+  # FILE HANDLING & MEDIA
+  # ==========================================================================
   image_picker: ^1.0.4
 
-  # PDF & Printing
+  # ==========================================================================
+  # PDF & PRINTING (QR Codes, Reports)
+  # ==========================================================================
   pdf: ^3.10.0
   printing: ^5.11.0
 
-  # Environment
+  # ==========================================================================
+  # ENVIRONMENT CONFIG
+  # ==========================================================================
   flutter_dotenv: ^6.0.0
 
-  # URL handling
-  url_launcher: ^6.2.0
+  # ==========================================================================
+  # URL & WEBVIEW
+  # ==========================================================================
+  url_launcher: ^6.2.5
+  # webview_flutter: ^4.4.0  # Uncomment if using 3D Secure card flow
 
-  # Payment Processing
-  paychangu_flutter: ^0.0.3
-  uuid: ^4.5.1
-
-  # Local storage / formatting
+  # ==========================================================================
+  # LOCAL STORAGE & FORMATTING
+  # ==========================================================================
   shared_preferences: ^2.2.2
   intl: ^0.20.2
 
-  # Notifications & sharing
+  # ==========================================================================
+  # NOTIFICATIONS & AUDIO (Supabase Realtime - NO Firebase)
+  # ==========================================================================
   audioplayers: ^6.5.1
   share_plus: ^7.2.0
+
+  # ==========================================================================
+  # ANALYTICS & CHARTS
+  # ==========================================================================
+  fl_chart: ^1.2.0
+
+  webview_flutter: ^4.10.0        # NEW: Inline checkout WebView
+  # NEW: iOS WebView support
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +90,9 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.4.1
 
+# ==========================================================================
+# APP ICONS
+# ==========================================================================
 flutter_icons:
   android: true
   ios: true
@@ -60,6 +100,9 @@ flutter_icons:
   adaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: "assets/images/logo.png"
 
+# ==========================================================================
+# SPLASH SCREEN
+# ==========================================================================
 flutter_native_splash:
   color: "#FFFFFF"
   image: "assets/images/logo.png"
@@ -68,11 +111,19 @@ flutter_native_splash:
   color_dark: "#000000"
   image_dark: "assets/images/logo.png"
 
+# ==========================================================================
+# FLUTTER ASSETS
+# ==========================================================================
 flutter:
   uses-material-design: true
+
   assets:
+    # Environment
     - assets/env/.env.production
-    - assets/images/logo.png
-    - assets/images/dyn.jpg
-    - assets/images/delicious_food_spread.png
-    - assets/audio/waiter_call.mp3
+    - assets/env/.env.development
+
+    # Images
+    - assets/image/logo.png
+
+    # Audio
+    - assets/audio/waiter_call.wav
